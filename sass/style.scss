@@ -1,0 +1,451 @@
+@use 'colors' as c;
+@use 'fontSize' as f;
+@use 'components' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Rubik', sans-serif;
+	font-size: 1.6rem;
+	color: c.$textWhite;
+	background-color: c.$primaryColor;
+}
+
+.nav {
+	position: sticky;
+	top: 0;
+	padding: 0.5em 1em;
+	height: 60px;
+	background-color: c.$primaryColor;
+	z-index: 10;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__info {
+		position: relative;
+		padding: 1em 2em;
+		width: 100%;
+
+		&-phone,
+		&-mail {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			i {
+				margin-top: 0.5em;
+				margin-right: 0.8em;
+				color: c.$secondaryColor;
+			}
+
+			p:nth-child(2) {
+				margin-top: 0.5em;
+			}
+		}
+	}
+
+	&__logo {
+		font-size: f.$headingText;
+		text-decoration: none;
+		color: c.$textWhite;
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 146px);
+		translate: -100% 0;
+		transition: translate 0.3s;
+		background-color: c.$primaryColor;
+
+		&--active {
+			translate: 0;
+		}
+	}
+
+	&__items {
+		margin-bottom: 3.5em;
+		text-align: center;
+		text-decoration: none;
+		color: c.$secondaryColor;
+	}
+
+	&__bars {
+		padding: 0.3em;
+
+		&--active {
+			.nav__line:nth-child(1) {
+				rotate: -45deg;
+				translate: 0 8px;
+			}
+
+			.nav__line:nth-child(2) {
+				opacity: 0;
+			}
+
+			.nav__line:nth-child(3) {
+				rotate: 45deg;
+				translate: 0 -7px;
+			}
+		}
+	}
+
+	&__line {
+		margin: 0.3em 0;
+		width: 25px;
+		height: 3px;
+		background-color: c.$secondaryColor;
+		border-radius: 25%;
+		transition: rotate 0.3s 0.1s, translate 0.3s, opacity 0.2s 0.2s;
+	}
+}
+
+.header {
+	position: relative;
+	height: 45vh;
+	background-size: cover;
+	background-position: center;
+	background-image: url('../img/header.png');
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		left: 0;
+		height: 20px;
+		width: 100%;
+		background-color: c.$secondaryColor;
+	}
+
+	&__text {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		padding: 0.5em 1em;
+		height: 100%;
+
+		&--one,
+		&--two {
+			font-weight: bold;
+		}
+
+		&--one {
+			align-self: flex-end;
+			font-size: 3rem;
+			text-align: right;
+			color: c.$primaryColor;
+			text-shadow: 3px 3px 0px c.$secondaryColor;
+		}
+
+		&--two {
+			align-self: flex-start;
+			font-size: 2.6rem;
+			color: c.$secondaryColor;
+			text-shadow: 3px 3px 0px c.$primaryColor;
+		}
+	}
+}
+
+.main {
+	background-color: c.$textWhite;
+}
+
+.skills {
+	margin-top: 20px;
+	text-align: center;
+
+	&__box {
+		&--title {
+			margin: 0.5em 0;
+			font-size: 2rem;
+			font-weight: bold;
+			color: c.$secondaryColor;
+		}
+		&--text {
+			font-size: 1.4rem;
+		}
+	}
+
+	&__one,
+	&__two,
+	&__three {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+		padding: 2em 1em;
+		height: 250px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			height: 10px;
+			width: 100%;
+			box-shadow: 0px 0px 13px -3px rgba(0, 0, 0, 0.5);
+			background-color: c.$secondaryColor;
+		}
+
+		i {
+			font-size: 6.2rem;
+		}
+	}
+
+	&__one {
+		background-color: c.$bt1;
+	}
+
+	&__two {
+		background-color: c.$bt2;
+	}
+
+	&__three {
+		background-color: c.$bt3;
+	}
+}
+
+.aboutUs {
+	margin-top: 1em;
+	padding: 0.5em 1em;
+	position: relative;
+	color: c.$textBlack;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		background-color: c.$secondaryColor;
+	}
+
+	&__title {
+		margin: 1em 0;
+		font-size: 2.5rem;
+		color: c.$primaryColor;
+	}
+
+	&__text {
+		margin-bottom: 1.8em;
+	}
+
+	&__photo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 50px;
+	}
+
+	img {
+		width: 184px;
+		height: 95px;
+	}
+}
+
+.invest{
+	margin-top: 10px;
+	position: relative;
+	height: 120vh;
+	background-size: cover;
+	background-image: url('../img/invest.png');
+	
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.425);
+	}
+
+	.wrapper{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+@media (min-width: 576px) {
+	.skills {
+		&__one,
+		&__two,
+		&__three {
+			height: 280px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.nav {
+		&__logo {
+			font-size: f.$headingTextTablet;
+		}
+
+		&__bars {
+			display: none;
+		}
+
+		&__menu {
+			flex-direction: row;
+			justify-content: flex-end;
+			position: relative;
+			top: 0;
+			height: 60px;
+			translate: 0;
+			background-color: transparent;
+		}
+
+		&__items {
+			// margin: 0 2em 0 0;
+			margin: 0 0 0 2em;
+			color: c.$textWhite;
+		}
+	}
+
+	.header {
+		height: 45vh;
+
+		&__text {
+			&--one {
+				font-size: 3.8rem;
+			}
+			&--two {
+				font-size: 3.3rem;
+
+				span {
+					font-size: 8.2rem;
+				}
+			}
+		}
+	}
+
+	.aboutUs {
+		padding: 4em 1em;
+		&__box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 1em;
+		}
+
+		&__text,
+		&__photo {
+			margin: 0;
+		}
+
+		&__text {
+			width: 80%;
+			font-size: 1.4rem;
+			line-height: 25px;
+		}
+
+		img {
+			margin-left: 0.8em;
+			width: 364px;
+			height: 188px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__logo {
+			font-size: f.$headingTextDesktop;
+		}
+
+		&__items {
+			font-size: f.$primaryTextDesktop;
+			transition: color 0.3s;
+
+			&:hover {
+				color: c.$secondaryColor;
+			}
+		}
+	}
+
+	.header {
+		height: 70vh;
+
+		&__text {
+			margin: 0 auto;
+			max-width: 1400px;
+
+			&--one,
+			&--two {
+				font-size: 5.2rem;
+			}
+
+			&--two {
+				margin-bottom: 1.2em;
+
+				span {
+					font-size: 12.3rem;
+				}
+			}
+		}
+	}
+
+	.skills {
+		position: relative;
+		top: -60px;
+
+		&__box {
+			display: flex;
+			padding: 0 1em;
+
+			&--title {
+				font-size: 2.5rem;
+			}
+
+			&--text {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.aboutUs {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__text {
+			width: 65%;
+			font-size: 1.6rem;
+		}
+
+		img {
+			margin: 0 4em 0 0;
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.nav {
+		&__menu {
+			padding: 0.5em 1em;
+		}
+	}
+}

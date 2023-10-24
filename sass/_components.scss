@@ -1,0 +1,25 @@
+@use 'colors' as *;
+
+[data-padlock='unlocked'] {
+	overflow: auto;
+}
+
+[data-padlock='blocked'] {
+	overflow: hidden;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1400px;
+	width: 100%;
+}
+
+.colors {
+	color: $secondaryColor;
+}
+
+.headerHouse{
+    font-size: 4.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
