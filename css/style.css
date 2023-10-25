@@ -266,6 +266,36 @@ body {
   position: relative;
   z-index: 2;
 }
+.invest__content {
+  position: absolute;
+  top: 0px;
+  padding: 0.5em 1em;
+  background-color: #001f42;
+}
+.invest__title {
+  margin: 0.5em 0;
+}
+.invest__header {
+  margin: 1em 0;
+}
+.invest__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  margin: 2em 0;
+}
+.invest__btn {
+  font-family: "Rubik", sans-serif;
+  width: 80%;
+  height: 40px;
+  font-weight: bold;
+  color: #001f42;
+  background-color: #fec000;
+  border-radius: 5px;
+  border: none;
+}
 
 @media (min-width: 576px) {
   .skills__one, .skills__two, .skills__three {
@@ -326,6 +356,10 @@ body {
     width: 364px;
     height: 188px;
   }
+  .invest__content {
+    top: 120px;
+    width: 60%;
+  }
 }
 @media (min-width: 992px) {
   .nav__logo {
@@ -377,6 +411,28 @@ body {
   }
   .aboutUs img {
     margin: 0 4em 0 0;
+  }
+  .invest__content {
+    top: 180px;
+    width: 35%;
+  }
+  .invest__title {
+    font-size: 3rem;
+  }
+  .invest__header, .invest__text {
+    font-size: 1.6rem;
+  }
+  .invest__btns {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .invest__btn {
+    width: 150px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  .invest__btn:hover {
+    color: #fec000;
+    background-color: #ffffff;
   }
 }
 @media (min-width: 1400px) {
